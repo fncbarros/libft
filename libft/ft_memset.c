@@ -6,30 +6,20 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 11:09:30 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/09 11:52:43 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/12 18:55:01 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-static char	ft_itoc(int c)
+#include "libft.h"
+
+void	*ft_memset(void *b, int c, size_t n)
 {
-	unsigned char	d;
+	long unsigned int	i;
 
-	d = '0' + c;
-	return (d);
-}
-
-void	*ft_memset(void *s, int c, size_t n)
-{
-	long unsigned int	i;	
-
-	if (c > 47 && c < 58)
-	{
-		ft_itoc(c);
-	}
 	i = 0;
 	while (i < n)
 	{
-		((char *)s)[i] = c;
+		((unsigned char *)b)[i] = c;
 		i++;
 	}
 	return (s);

@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 21:42:11 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/12 18:03:09 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/12 16:49:16 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/12 17:56:45 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
-#include "libft.h"
+#include <string.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_strchr(const char *s, int c)
 {
-	unsigned char *s;	
-	unsigned char *d;
+	int		i;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
-	while (n--)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		*d++ = *s++;
+		if (s[i] == (char)c)
+		{
+			return (&((char *)s)[i]);
+		}
+		i++;
 	}
-
-	return (dest);
+//	p = s[i];
+	return (NULL);
 }
 
 int main()
 {
-	char a[] = "abcdef";
-	char *b = a + 1;
-
-	ft_memcpy(b, a, 5);
-	printf("%s", a);
-
-/*char *a = "abcdef";
- * char *b = a + 1;
- * memmove(b, a, 5); // a will be "aabcde"
- * memcpy(b, a, 5); // a will be "aaaaaa";*/
+	char *str = "abcd";
+	
+	printf("%c\n", *ft_strchr(str, 'c'));
 }

@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 21:42:11 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/12 18:03:09 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/12 12:51:06 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/12 14:27:35 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include <stdio.h>
+#include <string.h>
 #include "libft.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlen(const char *s);
+
+size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 {
-	unsigned char *s;	
-	unsigned char *d;
+	int	i;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
-	while (n--)
+	i = 0;
+	while (i < (size - 1))
 	{
-		*d++ = *s++;
+		dst[size] = src[size];
+		if ((src + i) == NULL)
+			break;
+		i++;
 	}
-
-	return (dest);
+	dst[i] = '\0';
+	return (ft_strlen(src));
 }
 
 int main()
 {
-	char a[] = "abcdef";
-	char *b = a + 1;
+	char str1[10] = "abcf";
+	char str2[10] = "ghild";
 
-	ft_memcpy(b, a, 5);
-	printf("%s", a);
-
-/*char *a = "abcdef";
- * char *b = a + 1;
- * memmove(b, a, 5); // a will be "aabcde"
- * memcpy(b, a, 5); // a will be "aaaaaa";*/
+	printf("%s source length = %ld", str1, strlcpy(str1, str1 + 2, 3));
 }

@@ -1,44 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 21:42:11 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/12 18:03:09 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/12 14:35:31 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/12 16:31:55 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
 #include "libft.h"
+#include <stdio.h>
+#include <string.h>
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	unsigned char *s;	
-	unsigned char *d;
+	int	i;
+	int	j;
 
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
-	while (n--)
+	i = strlen(dst);
+	j = 0;
+	while (size > 0)
 	{
-		*d++ = *s++;
-	}
-
-	return (dest);
+		while (i < (size - 1))
+		{
+			dst[i] = src[j++];
+			i++;
+		}
+		dst[i] = '\0';
+	}	
+	return (strlen(src) + size);
 }
 
 int main()
 {
-	char a[] = "abcdef";
-	char *b = a + 1;
+	char a[10] = "abce";
+	char *b = "fghi";
 
-	ft_memcpy(b, a, 5);
-	printf("%s", a);
-
-/*char *a = "abcdef";
- * char *b = a + 1;
- * memmove(b, a, 5); // a will be "aabcde"
- * memcpy(b, a, 5); // a will be "aaaaaa";*/
+	printf("%s string length is %ld", a, ft_strlcat(a, b, sizeof(a)));
 }

@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 22:50:46 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/11 22:20:55 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/12 18:32:04 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,15 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		i++;
 	}
 	return (dest);
+}
+
+int main()
+{
+	char a[] = "abcdef";
+	char *b = a + 1;
+
+	ft_memmove(b, a, 5);
+	printf("%s", a);
 }
 /*char *a = "abcdef";
 char *b = a + 1;

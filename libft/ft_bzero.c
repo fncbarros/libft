@@ -6,15 +6,19 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 21:16:19 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/09 21:40:05 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/12 18:49:43 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft"
+
 void	ft_bzero(void *s, size_t n)
 {
-	while (n > 0)
+	unsigned char	*p;
+
+	p = (unsigned char *)s;
+	while (n--)
 	{
-		n--;
-		((char *)s)[n] = 0;
+		*p++ = 0;
 	}
 }
