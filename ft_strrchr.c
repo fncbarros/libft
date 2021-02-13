@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   strrchr.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 16:49:16 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/13 12:05:43 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/13 11:30:07 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/13 12:05:28 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
 	int		i;
 
-	i = 0;
-	while (s[i] != '\0')
+	i = strlen(s);
+	while (i >= 0)
 	{
+		i--;
 		if (s[i] == c)
 		{
 			return (&((char *)s)[i]);
 		}
-		i++;
 	}
 	return (NULL);
 }

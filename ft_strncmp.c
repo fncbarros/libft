@@ -1,44 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 14:35:31 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/13 15:19:20 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/13 15:24:29 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/13 15:35:58 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+int	ft_strncmp.c(const char *s1, const char *s2, size_t n)
 {
-	int	i;
-	int	j;
 
-	i = strlen(dst);
-	j = strlen(src);
-	if (size <= i)
-
-	while (size > 0)
+	/*while (n--)
 	{
-		while (i < (size - 1))
-		{
-			dst[i] = src[j++];
-			i++;
-		}
-		dst[i] = '\0';
-	}	
-	return (strlen(src) + size);
+
+	}*/
 }
 
 int main()
 {
-	char a[10] = "abce";
-	char *b = "fghi";
 
-	printf("%s string length is %ld", a, ft_strlcat(a, b, sizeof(a)));
 }
