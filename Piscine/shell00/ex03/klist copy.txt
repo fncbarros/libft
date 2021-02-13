@@ -1,0 +1,5 @@
+Credentials cache: API:4D016CEE-09B1-463E-859E-ECE1F7060AFE
+        Principal: fbarros@42LISBOA.COM
+
+  Issued                Expires               Principal
+Oct 22 12:50:36 2020  Oct 22 22:50:27 2020  krbtgt/42LISBOA.COM@42LISBOA.COM
