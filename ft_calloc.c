@@ -1,42 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/14 13:08:25 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/14 13:20:49 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/14 12:50:56 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/16 18:28:59 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
-int	ft_atoi(const char *nptr)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
-	int i;
-	int len;
-	int j;
+	//nmemb * size == memory needed to be allocated (?)
+	//but can't just malloc nmmeb * size all together...
 	
-	j = 0;
-	i = 0;
-	len = ft_strlen(nptr);
-	if (nptr[0] == '-' || nptr [0] == '+')
-		j++;
-	while (j < len)
-	{
-		if (nptr[j] < '0' || nptr[j] > '9')
-		{
-			break;
-		}
-		else
-		{
-			i *= 10;
-			i += nptr[j] - '0';
-			j++;
-		}
-	}
-	if (nptr[0] == '-')
-		i *= -1;
-	return (i);
+
+	void	*p;
+
+	p = malloc(nmemb * size);
+	if (p == NULL)
+		return (1);
+	ft_bzero(p, nmemb);
+	return (p);
+
+	// something is missing...
 }

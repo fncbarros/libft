@@ -6,39 +6,29 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 14:35:31 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/13 15:19:20 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/13 20:56:07 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
-#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	int	i;
-	int	j;
+	unsigned int	r;
+	unsigned int	d;
+	unsigned int	s;
 
-	i = strlen(dst);
-	j = strlen(src);
-	if (size <= i)
-
-	while (size > 0)
+	d = strlen(dst);
+	s = strlen(src);
+	if (size <= d)
+		r = s + size;
+	else
+		r = s + d;
+	dst += d;
+	while (size > (d + 1) && *src != '\0')
 	{
-		while (i < (size - 1))
-		{
-			dst[i] = src[j++];
-			i++;
-		}
-		dst[i] = '\0';
-	}	
-	return (strlen(src) + size);
-}
-
-int main()
-{
-	char a[10] = "abce";
-	char *b = "fghi";
-
-	printf("%s string length is %ld", a, ft_strlcat(a, b, sizeof(a)));
+		*dst++ = *src++;
+	}
+	*dst = '\0';
+	return (r);
 }
