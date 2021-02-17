@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 18:19:34 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/17 14:04:40 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/17 15:08:40 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/17 16:04:42 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
-#include "libft.h"
+#include "stdlib.h"
+#include <string.h>
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	**ft_split(char const *s, char c)
 {
-	char	*p;
+	char	**arr;
+	char 	*s2;
 	int		i;
 
-	p = (char *)malloc(len + 1);
-	if (!p)
+	arr = (char **)malloc(sizeof(s) + 2);
+	if (!arr)
 		return (NULL);
 	i = 0;
-	while (0 < len--)
+	while (s[i] != c && *s)
 	{
-		p[i++] = s[start++];
+		arr[0][i] = s[i];
+		i++;
 	}
-	p[i] = '\0';;
-	return (p);
+	arr[0][i] = '\0';
+	s2 = strchr(s, c);
+	i = 0;
+	while (s2[i] != '\0')
+	{
+		arr[1][i] = s2[i];
+		i++;
+	}
+   arr[1][i] = '\0';
+	return (arr);
 }
 
 int main()
 {
-	char *c = "abcde";
-	printf("%s", ft_substr(c, 1, 3));
+	char **c = ft_split("abcddcba", 'd');
+	printf("%s.%s\n", c[0], c[1]);
 }

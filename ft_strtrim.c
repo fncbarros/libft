@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 11:09:30 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/17 16:02:41 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/17 14:23:47 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/17 14:58:27 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include "stlib.h"
+#include <string.h>
 
-void	*ft_memset(void *b, int c, size_t n)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-	long unsigned int	i;
+	char	*s2;
+	int len;
 
-	i = 0;
-	while (i < n)
-	{
-		((unsigned char *)b)[i] = c;
-		i++;
-	}
-	return (s);
-}
-
-int main()
-{
-
+	//len = strlen(s1);
+	
+	s2 = (char *)malloc(strlen(s1)); //...
+	if (!s2)
+		return (NULL);
+	
 }

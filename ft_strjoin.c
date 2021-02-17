@@ -1,31 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/09 11:09:30 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/17 16:02:41 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/17 14:05:08 by fbarros           #+#    #+#             */
+/*   Updated: 2021/02/17 14:23:15 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+#include <stdio.h>
 #include "libft.h"
 
-void	*ft_memset(void *b, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	long unsigned int	i;
+	char	*s3;
+	int i;
+	int j;
 
+	//j = ft_strlen(s1) + ft_srtlen(s2) + 1);
+	s3 = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
+	if (!s3)
+		return (NULL);
 	i = 0;
-	while (i < n)
+	while (s1[i] != '\0')
 	{
-		((unsigned char *)b)[i] = c;
+		s3[i] = s1[i];
 		i++;
 	}
-	return (s);
+	j = 0;
+	while (s2[j] != '\0')
+		s3[i++] = s2[j++];
+	s3[i] = '\0';
+	return (s3);
 }
 
 int main()
 {
-
+	printf("%s", ft_strjoin("abc", "def"));
 }
