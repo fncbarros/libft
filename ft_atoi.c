@@ -6,37 +6,35 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 13:08:25 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/14 13:20:49 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/22 15:46:40 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *nptr)
+int	ft_atoi(const char *str)
 {
-	int i;
+	int n;
 	int len;
 	int j;
 	
 	j = 0;
-	i = 0;
+	n = 0;
 	len = ft_strlen(nptr);
-	if (nptr[0] == '-' || nptr [0] == '+')
+	if (str[0] == '-' || str [0] == '+')
 		j++;
 	while (j < len)
 	{
-		if (nptr[j] < '0' || nptr[j] > '9')
-		{
+		if (str[j] < '0' || str[j] > '9')
 			break;
-		}
 		else
 		{
-			i *= 10;
-			i += nptr[j] - '0';
+			n *= 10;
+			n += str[j] - '0';
 			j++;
 		}
 	}
-	if (nptr[0] == '-')
-		i *= -1;
-	return (i);
+	if (str[0] == '-')
+		n *= -1;
+	return (n);
 }
