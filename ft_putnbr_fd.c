@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 17:34:14 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/17 17:42:16 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/19 20:02:43 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,4 @@ void ft_putnbr_fd(int n, int fd)
 	char	*nbr;
 	nbr = ft_itoa(n);
 	ft_putstr_fd(nbr, fd);
-}
-
-int main()
-{
-	ft_putnbr_fd(99, 1);
 }
