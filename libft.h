@@ -2,7 +2,6 @@
 #define __LIBFT_H__
 
 #include <stdlib.h>
-#include <errno.h>
 #include <unistd.h>
 
 void	*ft_memset(void *b, int c, size_t n);
