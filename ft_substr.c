@@ -6,11 +6,10 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 18:19:34 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/17 14:04:40 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/25 19:05:04 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
@@ -28,10 +27,4 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	}
 	p[i] = '\0';;
 	return (p);
-}
-
-int main()
-{
-	char *c = "abcde";
-	printf("%s", ft_substr(c, 1, 3));
 }

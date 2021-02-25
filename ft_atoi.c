@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 13:08:25 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/23 19:40:19 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/02/25 19:26:42 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,19 @@ int	ft_atoi(const char *str)
 	int n;
 	int len;
 	int j;
-	
+	int	neg;
+
+	neg = 0;	
 	j = 0;
 	n = 0;
-	len = ft_strlen(nptr);
-	if (str[0] == '-' || str [0] == '+')
-		j++;
+	len = ft_strlen(str);
+	while ((str[j] == '-' || str [j] == '+') && j++)
+	{
+		if (str[j] == '-')
+		{
+			neg++;
+		}
+	}
 	while (j < len)
 	{
 		if (str[j] < '0' || str[j] > '9')
@@ -34,7 +41,7 @@ int	ft_atoi(const char *str)
 			j++;
 		}
 	}
-	if (str[0] == '-')
-		n *= -1;
+	if (neg % 2 != 0)
+		neg *= -1;
 	return (n);
 }
