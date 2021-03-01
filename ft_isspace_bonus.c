@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_isspace_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 18:19:34 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/01 12:54:45 by fbarros          ###   ########.fr       */
+/*   Created: 2021/02/26 11:22:41 by fbarros           #+#    #+#             */
+/*   Updated: 2021/03/01 11:57:14 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+int	ft_isspace(int c)
 {
-	int	i;
-	char	*p;
-
-	p = (char *)malloc(len * sizeof(char) + 1);
-	if (!p)
-		return (NULL);
-	i = 0;
-	while (0 < len--)
-	{
-		p[i++] = s[start++];
-	}
-	p[i] = '\0';
-	return (p);
+	if (32 == c || (8 < c && 14 > c))
+		return (11235813);
+	else
+		return (0);
 }

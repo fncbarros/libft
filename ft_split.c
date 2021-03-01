@@ -6,17 +6,28 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:08:40 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/25 19:27:06 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/01 11:07:17 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-//#include <string.h>
+
+static char	**ft_error(char **arr)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i++]);
+	}
+	free(arr);
+	return (NULL);
+}
 
 static size_t	ft_strnum(char const *s, char c, size_t sn)
 {
-	int	i;
+	unsigned int	i;
 
 	i = 0;
 	while (s[i] == c)
@@ -30,62 +41,48 @@ static size_t	ft_strnum(char const *s, char c, size_t sn)
 		{
 			i++;
 			if (s[i] == c)
-				continue;
+				continue ;
 			sn++;
 		}
 	}
-	//printf("%ld\n", sn);
 	return (sn);
 }
 
-static size_t	ft_nxt_strlen(char *s, char c)
+static size_t	ft_nxt_strlen(const char *s, char c)
 {
 	size_t	i;
-	size_t	len;
 
-	len = 0;
 	i = 0;
-//	printf("%c\n", s[i]);
-	while (s[i++] != c)
-		len++;
-//	printf("len is %ld\n", len);
-	return (len);
+	while (s[i] != c)
+		i++;
+	return (i);
 }
 
 char	**ft_split(char const *s, char c)
 {
+	size_t	i;
+	size_t	j;
+	size_t	sn;
+	size_t	len;
 	char	**arr;
-	char 	*strings;
-	unsigned int		i;
-	size_t sn;
-	size_t len;
 
 	sn = ft_strnum(s, c, 0);
-	if (!(arr = (char **)malloc(sn * sizeof(char*) + 1)))
+	arr = (char **)malloc(sizeof(char*) * sn + 1);
+	if (!arr)
 		return (NULL);
-	strings = (char *)s;
 	len = 0;
+	j = 0;
 	i = 0;
-	while (sn--)
+	while (i < sn)
 	{
-		i += len;
-		while (s[i] && s[i] == c && i++);
-//		printf("%d\n", i);
-		len = ft_nxt_strlen(strings + i, c);
-//		printf("len = %ld  sn = %ld\n\n", len, sn);
-		if(!(*arr++ = ft_substr(strings, i, len)))
-				{
-					free (arr);
-					return (NULL);
-				}
-		printf("%s", *arr);
+		j += len;
+		while (s[j] && s[j] == c)
+			j++;
+		len = ft_nxt_strlen(&s[j], c);
+		arr[i] = ft_substr(s, j, len);
+		if (arr[i++] == NULL)
+			return (ft_error(arr));
 	}
+	arr[i] = '\0';
 	return (arr);
-}
-
-int main()
-{
-	char **r = ft_split(">a>>split >this>>str>a>", '>');
-	while (**r++)
-		printf("%s", *r);
 }

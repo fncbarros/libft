@@ -6,13 +6,11 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:23:47 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/25 18:58:16 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/01 12:51:41 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
 #include "libft.h"
-#include <string.h>
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -28,7 +26,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (*s1 && ft_strchr(set, s1[end]) != NULL)
 		end--;
 	len = (end - start) + 2;
-	s2 = (char *)malloc(len); 
+	s2 = (char *)malloc(len);
 	if (!s2)
 		return (NULL);
 	len = 0;
@@ -38,10 +36,4 @@ char	*ft_strtrim(char const *s1, char const *set)
 	}
 	s2[len] = '\0';
 	return (s2);
-}
-
-int main()
-{
-	char *c = ft_strtrim("(! armando(/", "!(/");
-	printf("%s", c);
 }

@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 22:50:46 by fbarros           #+#    #+#             */
-/*   Updated: 2021/02/22 18:11:50 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/01 12:22:18 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 		while (--n)
 			((unsigned char *)dest)[n] = ((unsigned char *)src)[n];
 	}
-		else
-			ft_memcpy(dest, src, n);
+	else
+		ft_memcpy(dest, src, n);
 	return (dest);
 }

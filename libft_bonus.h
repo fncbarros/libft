@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   libft_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/16 18:19:34 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/01 12:54:45 by fbarros          ###   ########.fr       */
+/*   Created: 2021/03/01 13:05:48 by fbarros           #+#    #+#             */
+/*   Updated: 2021/03/01 13:06:17 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LIBFT_BONUH
+# define LIBFT_BONUS_H
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
-{
-	int	i;
-	char	*p;
+int	ft_isspace(int c);
 
-	p = (char *)malloc(len * sizeof(char) + 1);
-	if (!p)
-		return (NULL);
-	i = 0;
-	while (0 < len--)
-	{
-		p[i++] = s[start++];
-	}
-	p[i] = '\0';
-	return (p);
-}
+#endif
