@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 15:08:40 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/01 11:07:17 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/02 16:04:08 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,6 @@ char	**ft_split(char const *s, char c)
 		if (arr[i++] == NULL)
 			return (ft_error(arr));
 	}
-	arr[i] = '\0';
+	arr[i] = NULL;
 	return (arr);
 }

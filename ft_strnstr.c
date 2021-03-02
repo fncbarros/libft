@@ -6,11 +6,11 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/13 12:06:46 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/02 13:03:39 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/02 13:05:44 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" 
+#include "libft.h"
 
 char	*ft_strnstr(const char *hst, const char *ndl, size_t len)
 {

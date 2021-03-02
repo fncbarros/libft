@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:05:08 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/01 12:33:17 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/02 16:00:07 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	i;
-	int	j;
+	int		i;
+	int		j;
 	char	*s3;
 
 	s3 = (char *)malloc((ft_strlen(s1) + ft_strlen(s2)) + 1);
