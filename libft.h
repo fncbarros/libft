@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 12:56:18 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/01 13:05:00 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/02 13:33:11 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 void	*ft_memset(void *b, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
+void	*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
 int	ft_memcmp(const void *s1, const void *s2, size_t n);
@@ -29,6 +30,7 @@ char	*ft_strchr(const char *s, int c);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlcpy(char *dst, const char *src, size_t size);
+char	*ft_strmapi(char const *s, char(*f)(unsigned int, char));
 void	*ft_calloc(size_t nmemb, size_t size);
 char	*ft_strdup(const char *s);
 int	ft_atoi(const char *nptr);
@@ -56,5 +58,6 @@ typedef struct s_list
 }	t_list;
 
 t_list	*ft_lstnew(void *content);
+void    ft_lstadd_front(t_list **lst, t_list *new);
 
 #endif
