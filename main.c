@@ -11,5 +11,9 @@ int main()
 	char sResult2[] = {67, 67, 68, 68, 69, 0, 45};	
 
 	p = ft_memmove(sResult + 1, sResult, 2);
-	printf("%d %d", (int)p, ft_memcmp(sResult, sResult2, 7));
+	int i = 0;
+	while (((unsigned char*)p)[i]){
+		printf("%d ", ((unsigned char *)p)[i++]);
+	}
+	printf("\n%d", ft_memcmp(sResult, sResult2, 7));
 }
