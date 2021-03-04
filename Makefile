@@ -6,7 +6,7 @@
 #    By: fbarros <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 14:41:52 by fbarros           #+#    #+#              #
-#    Updated: 2021/03/01 16:52:57 by fbarros          ###   ########.fr        #
+#    Updated: 2021/03/04 22:56:16 by fbarros          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,9 @@ SRCS	= ft_atoi.c \
 
 OBJS	= ${SRCS:.c=.o}
 
-BONUS	= ft_lstnew.c
+BONUS	= ft_lstnew.c \
+	  ft_lstadd_front.c \
+	  ft_lstsize.c
 
 BONUS_OBJS = ${BONUS:.c=.o}
 
