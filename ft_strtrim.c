@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:23:47 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/05 21:00:24 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/05 23:23:18 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char		*s2;
-	unsigned int	len;
-	size_t		start;
-	size_t		end;
+	size_t	len;
+	size_t	start;
+	size_t	end;
+	char	*s2;
 
 	start = 0;
 	while (*s1 && ft_strchr(set, s1[start]) != NULL)
