@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/13 12:06:46 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/05 12:06:25 by fbarros          ###   ########.fr       */
+/*   Created: 2021/03/05 10:44:24 by fbarros           #+#    #+#             */
+/*   Updated: 2021/03/05 14:32:14 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strnstr(const char *hst, const char *ndl, size_t len)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	int	i;
-	int	j;
+	t_list	*last;
 
-	if (*ndl == '\0')
-		return ((char *)hst);
-	i = 0;
-	while (*(hst + i) != '\0' && len--)
+	if (!new)
+		return ;
+	new->next = NULL;
+	if (*lst != NULL)
 	{
-		j = 0;
-		while (hst[i + j] == ndl[j] && ndl[j] && len > 0)
-		{
-			j++;
-			len--;
-			if (ndl[j] == '\0')
-				return ((char *)hst + i);
-		}
-		i++;
+		last = ft_lstlast(*lst);
+		last->next = new;
 	}
-	return (NULL);
+	else
+		*lst = new;
 }
