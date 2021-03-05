@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:05:49 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/02 16:02:27 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/05 18:42:55 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@ static size_t	ft_intlen(int n)
 {
 	size_t	len;
 
-	len = 1;
+	len = 0;
+	if (0 == n)
+		return (1);
 	if (0 > n)
 		len++;
 	while (n != 0)
@@ -51,7 +53,7 @@ char	*ft_itoa(int n)
 	size_t		i;
 
 	len = ft_intlen(n);
-	s = (char *)malloc(len);
+	s = (char *)malloc(len + 1);
 	if (!s)
 		return (NULL);
 	rev = ft_intrev(n);
@@ -61,7 +63,7 @@ char	*ft_itoa(int n)
 		i = 1;
 		s[0] = '-';
 	}
-	while (i < len - 1)
+	while (i < len)
 	{
 		n = rev % 10;
 		s[i++] = n + 48;
