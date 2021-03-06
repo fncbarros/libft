@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 18:19:34 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/05 23:25:31 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/06 18:24:56 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*p;
 
-	if (ft_strlen(s) <= start)
-		return (0);
 	if (len > (ft_strlen(s) - start))
 		len = ft_strlen(s) - start;
 	p = (char *)malloc(len * sizeof(char) + 1);

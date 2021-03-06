@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 12:51:06 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/04 20:58:38 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/06 18:21:30 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	if (!dst || !src)
 		return (0);
 	if (size > 0)
-	{	
+	{
 		while (i < (size - 1) && src[i])
 		{
 			dst[i] = src[i];
