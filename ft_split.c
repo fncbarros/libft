@@ -5,12 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 15:08:40 by fbarros           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2021/03/05 19:03:50 by fbarros          ###   ########.fr       */
-=======
-/*   Updated: 2021/03/06 18:23:51 by fbarros          ###   ########.fr       */
->>>>>>> 5723137229e7994452fc6025aaeecf564e6ed357
+/*   Created: 2021/03/07 14:12:57 by fbarros           #+#    #+#             */
+/*   Updated: 2021/03/07 14:14:34 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +18,7 @@ static char		**ft_error(char **arr)
 
 	i = 0;
 	while (arr[i])
-	{
 		free(arr[i++]);
-	}
 	free(arr);
 	return (NULL);
 }
