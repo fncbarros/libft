@@ -7,3 +7,5 @@ a.out
 *.a
 *.o
 libftTester/
+simple_debug/
+Libftest/

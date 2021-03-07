@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 14:35:31 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/05 16:50:18 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/06 18:20:50 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	s = 0;
 	while (size > (d + 1) && src[s] != '\0')
 		dst[d++] = src[s++];
-	if (size != 0 && d > sizeof dst)
+	if (size != 0 && d > sizeof(dst))
 		dst[d] = '\0';
 	return (r);
 }

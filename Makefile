@@ -6,7 +6,7 @@
 #    By: fbarros <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 14:41:52 by fbarros           #+#    #+#              #
-#    Updated: 2021/03/06 13:56:06 by fbarros          ###   ########.fr        #
+#    Updated: 2021/03/06 18:15:17 by fbarros          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,8 +60,6 @@ CFLAGS	= -Wall -Werror -Wextra -g
 
 NAME	= libft.a
 
-HEADER = libft.h
-
 CC	= gcc
 
 AR	= ar rc
@@ -70,10 +68,10 @@ INDEX	= ranlib
 
 RM	= rm -f
 
-all:		${NAME}
-
 .c.o:	
 		${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
+
+all:		${NAME}
 
 ${NAME}:	${OBJS}
 		${AR} ${NAME} ${OBJS}
