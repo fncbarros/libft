@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fbarros <fbarros@student.42lisboa.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/07 14:12:57 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/07 14:14:34 by fbarros          ###   ########.fr       */
+/*   Created: 2021/03/08 14:31:19 by fbarros           #+#    #+#             */
+/*   Updated: 2021/03/08 15:40:31 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include <stdio.h>
 static char		**ft_error(char **arr)
 {
 	unsigned int	i;
@@ -30,19 +30,13 @@ static size_t	ft_strnum(char const *s, char c, size_t sn)
 	i = 0;
 	while (s[i] == c && s[i])
 		i++;
-	if (s[i] == '\0')
-		return (0);
-	sn++;
 	while (s[i])
 	{
-		while (s[i + 1] != '\0' && s[i] == c)
-		{
+		sn++;
+		while (s[i] != c && s[i])
 			i++;
-			if (s[i] == c)
-				continue ;
-			sn++;
-		}
-		i++;
+		while (s[i] == c && s[i])
+			i++;
 	}
 	return (sn);
 }
@@ -65,14 +59,18 @@ char			**ft_split(char const *s, char c)
 	size_t	len;
 	char	**arr;
 
-	sn = ft_strnum(s, c, 0);
-	arr = (char **)malloc(sizeof(char *) * sn + 1);
+	if (s[0] != 0)
+		sn = 1;
+	if (c != 0)
+		sn = ft_strnum(s, c, 0); //will fucking segfault if c == 0; 
+	printf("%ld\n", sn);
+	arr = (char **)malloc(sizeof(char *) * (sn + 1)); //if c == 0 and *s is true you still need sn to be 1
 	if (!arr)
 		return (NULL);
 	len = 0;
 	j = 0;
 	i = 0;
-	while (i < sn)
+	while (i < sn && s[j])
 	{
 		j += len;
 		while (s[j] && s[j] == c)
@@ -82,6 +80,7 @@ char			**ft_split(char const *s, char c)
 		if (arr[i++] == NULL)
 			return (ft_error(arr));
 	}
+	printf("%ld\n", i);
 	arr[i] = NULL;
 	return (arr);
 }
