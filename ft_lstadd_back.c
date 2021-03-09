@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 10:44:24 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/05 14:32:14 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/09 17:18:48 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*last;
 
-	if (!new)
+	if (!new || !lst)
 		return ;
-	new->next = NULL;
+	last = ft_lstlast(new);
+	last->next = NULL;
 	if (*lst != NULL)
 	{
 		last = ft_lstlast(*lst);
