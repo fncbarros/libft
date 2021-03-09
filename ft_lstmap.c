@@ -1,22 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: fbarros <fbarros@student.42lisboa.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/04 21:43:00 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/06 10:53:13 by fbarros          ###   ########.fr       */
+/*   Created: 2021/03/09 14:16:58 by fbarros           #+#    #+#             */
+/*   Updated: 2021/03/09 14:37:22 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (new != NULL || lst != NULL)
-	{
-		(*new).next = *lst;
-		*lst = new;
-	}
+	
 }

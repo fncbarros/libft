@@ -6,7 +6,7 @@
 #    By: fbarros <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 14:41:52 by fbarros           #+#    #+#              #
-#    Updated: 2021/03/06 18:15:17 by fbarros          ###   ########.fr        #
+#    Updated: 2021/03/09 14:15:27 by fbarros          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,7 +52,10 @@ BONUS	= ft_lstnew.c \
 	  ft_lstsize.c \
 	  ft_lstlast.c \
 	  ft_lstadd_back.c \
-	  ft_lstdelone.c
+	  ft_lstdelone.c \
+	  ft_lstclear.c \
+	  ft_lstiter.c \
+	  ft_lstmap.c
 
 BONUS_OBJS = ${BONUS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: fbarros <fbarros@student.42lisboa.com      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/08 14:31:19 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/08 15:40:31 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/08 16:21:21 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ char			**ft_split(char const *s, char c)
 		sn = 1;
 	if (c != 0)
 		sn = ft_strnum(s, c, 0); //will fucking segfault if c == 0; 
-	printf("%ld\n", sn);
 	arr = (char **)malloc(sizeof(char *) * (sn + 1)); //if c == 0 and *s is true you still need sn to be 1
 	if (!arr)
 		return (NULL);
@@ -80,7 +79,6 @@ char			**ft_split(char const *s, char c)
 		if (arr[i++] == NULL)
 			return (ft_error(arr));
 	}
-	printf("%ld\n", i);
 	arr[i] = NULL;
 	return (arr);
 }
