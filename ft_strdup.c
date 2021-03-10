@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/14 13:23:07 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/05 15:01:33 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/10 18:25:02 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,7 @@ char	*ft_strdup(const char *s)
 {
 	char	*s2;
 
-	if (!s)
-		return (NULL);
-	s2 = (char *)malloc(ft_strlen(s) + 1);
+	s2 = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (!s2)
 		return (NULL);
 	ft_strlcpy(s2, s, ft_strlen(s) + 1);

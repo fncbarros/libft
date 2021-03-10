@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/10 23:44:10 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/02 13:17:40 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/10 16:43:33 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ void	*ft_memccpy(void *dest, const void *src, int c, size_t n)
 	unsigned int	i;
 
 	i = 0;
-	if (!dest || !src)
-		return (NULL);
 	while (i < n)
 	{
 		((unsigned char *)dest)[i] = ((unsigned char *)src)[i];
