@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 12:51:06 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/06 18:21:30 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/10 18:50:53 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 			dst[i] = src[i];
 			i++;
 		}
-		dst[i] = '\0';
+	dst[i] = '\0';
 	}
 	return (len);
 }

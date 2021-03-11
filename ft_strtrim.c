@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 14:23:47 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/05 23:23:18 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/10 19:20:02 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
-	size_t	start;
-	size_t	end;
+	int		start;
+	int		end;
 	char	*s2;
 
 	start = 0;
-	while (*s1 && ft_strchr(set, s1[start]) != NULL)
+	while (*s1 && ft_strchr(set, s1[start]))
 		start++;
 	end = ft_strlen(s1) - 1;
-	while (end > start && ft_strchr(set, s1[end]) != NULL)
+	while (end > start && ft_strchr(set, s1[end]))
 		end--;
 	len = (end - start) + 2;
 	if (end <= start)

@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 15:37:47 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/09 15:41:24 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/10 16:51:22 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	size_t	i;
 
 	i = 0;
-	if (!dest || !src)
+	if (!dest && !src)
 		return (NULL);
 	if (dest > src)
 	{
