@@ -6,7 +6,7 @@
 #    By: fbarros <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 14:41:52 by fbarros           #+#    #+#              #
-#    Updated: 2021/03/09 14:15:27 by fbarros          ###   ########.fr        #
+#    Updated: 2021/03/12 19:57:30 by fbarros          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,25 +72,25 @@ INDEX	= ranlib
 RM	= rm -f
 
 .c.o:	
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
+			${CC} ${CFLAGS} -c $< -o ${<:.c=.o} -I.
 
-all:		${NAME}
+all:		$(NAME)
 
-${NAME}:	${OBJS}
-		${AR} ${NAME} ${OBJS}
-		${INDEX} ${NAME}
+$(NAME):	${OBJS}
+			${AR} $(NAME) ${OBJS}
+			${INDEX} $(NAME)
 
-bonus:		${NAME} ${BONUS_OBJS}
-		${AR} ${NAME} ${OBJS} ${BONUS_OBJS}
-		${INDEX} ${NAME}
+bonus:		$(NAME) ${BONUS_OBJS}
+			${AR} $(NAME) ${OBJS} ${BONUS_OBJS}
+			${INDEX} $(NAME)
 
 clean :		
-		${RM} ${OBJS} ${BONUS_OBJS}
+			${RM} ${OBJS} ${BONUS_OBJS}
 
 fclean:		clean
-		${RM} ${NAME}
+			${RM} ${NAME}
 
-re:		fclean all
+re:			fclean all
 
 rebonus :	fclean bonus
 

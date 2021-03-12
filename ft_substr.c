@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/16 18:19:34 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/07 18:41:31 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/12 19:07:57 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*p;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	if (len > (ft_strlen(s) - start))
 		len = ft_strlen(s) - start;
 	if (start > ft_strlen(s))

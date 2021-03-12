@@ -6,12 +6,11 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 15:24:04 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/09 16:29:28 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/12 20:35:57 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 static char		**ft_error(char **arr)
 {
@@ -31,6 +30,8 @@ static size_t	ft_strnum(char const *s, char c)
 
 	i = 0;
 	n = 0;
+	if (!s)
+		return (0);
 	while (s[i] == c && s[i])
 		i++;
 	while (s[i])
@@ -63,8 +64,7 @@ char			**ft_split(char const *s, char c)
 	char			**arr;
 
 	sn = ft_strnum(s, c);
-	arr = (char **)malloc(sizeof(char *) * (sn + 1));
-	if (!arr)
+	if (!(arr = (char **)malloc(sizeof(char *) * (sn + 1))))
 		return (NULL);
 	len = 0;
 	j = 0;
