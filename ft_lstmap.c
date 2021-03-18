@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/12 19:53:15 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/13 16:53:32 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/03/18 11:26:41 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new;
 	t_list	*newroot;
 
-	if (!lst)							//what if no f()?
+	if (!lst || !f)
 		return (NULL);
-	new = ft_lstnew(f(lst->content));  //allocation not protected ...
+	new = ft_lstnew(f(lst->content));
+	if (!new)
+		return (NULL);
 	newroot = new;
 	lst = lst->next;
 	while (lst)

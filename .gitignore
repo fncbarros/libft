@@ -6,7 +6,6 @@ a.out
 *~
 *.a
 *.o
-libftTester/
 simple_debug/
 Libftest/
 libft-unit-test/
