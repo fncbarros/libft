@@ -1,6 +1,5 @@
 # libft
 
-split timeout on Listest
-
-substr leak on libftTester
+bonus
+ft_isspace
 
