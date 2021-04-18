@@ -6,13 +6,13 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/09 15:24:04 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/12 20:55:23 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/04/18 18:03:57 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char		**ft_error(char **arr)
+static char	**ft_error(char **arr)
 {
 	unsigned int	i;
 
@@ -55,7 +55,7 @@ static size_t	ft_nxt_strlen(const char *s, char c)
 	return (i);
 }
 
-char			**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	unsigned int	i;
 	unsigned int	j;
@@ -64,7 +64,8 @@ char			**ft_split(char const *s, char c)
 	char			**arr;
 
 	sn = ft_strnum(s, c);
-	if (!(arr = (char **)malloc(sizeof(char *) * (sn + 1))))
+	arr = (char **)malloc(sizeof(char *) * (sn + 1));
+	if (!arr)
 		return (NULL);
 	len = 0;
 	j = 0;

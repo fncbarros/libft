@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/01 13:05:48 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/01 13:06:17 by fbarros          ###   ########.fr       */
+/*   Created: 2021/04/18 18:00:36 by fbarros           #+#    #+#             */
+/*   Updated: 2021/04/18 18:01:29 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_BONUH
+#ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
 
 int	ft_isspace(int c);

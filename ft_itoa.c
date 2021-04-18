@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/17 16:05:49 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/06 18:23:02 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/04/18 17:49:18 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static long int	ft_intrev(int n)
 	return (rev);
 }
 
-char			*ft_itoa(int n)
+char	*ft_itoa(int n)
 {
 	long int	rev;
 	size_t		len;
