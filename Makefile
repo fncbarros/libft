@@ -55,7 +55,9 @@ BONUS	= ft_lstnew.c \
 	  ft_lstdelone.c \
 	  ft_lstclear.c \
 	  ft_lstiter.c \
-	  ft_lstmap.c
+	  ft_lstmap.c \
+	  ft_isspace_bonus.c \
+	  ft_numlen_bonus.c 
 
 BONUS_OBJS = ${BONUS:.c=.o}
 
