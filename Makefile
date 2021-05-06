@@ -6,7 +6,7 @@
 #    By: fbarros <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/02/22 14:41:52 by fbarros           #+#    #+#              #
-#    Updated: 2021/03/12 19:57:30 by fbarros          ###   ########.fr        #
+#    Updated: 2021/04/25 19:03:28 by fbarros          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,8 @@ BONUS	= ft_lstnew.c \
 	  ft_lstiter.c \
 	  ft_lstmap.c \
 	  ft_isspace_bonus.c \
-	  ft_numlen_bonus.c 
+	  ft_numlen_bonus.c \
+	  ft_strset_bonus.c 
 
 BONUS_OBJS = ${BONUS:.c=.o}
 

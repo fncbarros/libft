@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_numlen(int i)
+#include <stdlib.h>
+
+size_t	ft_numlen(int i)
 {
 	int	len;
 
@@ -19,7 +21,7 @@ int	ft_numlen(int i)
 		return (1);
 	if (i < 0)
 		i *= -1;
-	while (i > 0)
+	while (i != 0)
 	{
 		i /= 10;
 		len++;

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strset_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/12 10:56:15 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/02 12:33:04 by fbarros          ###   ########.fr       */
+/*   Created: 2021/04/25 18:44:35 by fbarros           #+#    #+#             */
+/*   Updated: 2021/04/25 19:02:55 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strset(const char *s, char *set)
 {
-	size_t	n;
-
-	n = 0;
-	if (!s)
-		return (0);
-	while (s[n] != 0)
-		n++;
-	return (n);
+	while (*set)
+	{
+		if (ft_strchr(s, *set))
+			return (ft_strchr(s, *set));
+		set++;
+	}
+	return (NULL);
 }
