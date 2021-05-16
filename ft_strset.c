@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_strset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/26 11:22:41 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/01 11:57:14 by fbarros          ###   ########.fr       */
+/*   Created: 2021/05/16 12:34:40 by fbarros           #+#    #+#             */
+/*   Updated: 2021/05/16 12:34:49 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(int c)
+#include "libft.h"
+
+char	*ft_strset(const char *s, char *set)
 {
-	if (32 == c || (8 < c && 14 > c))
-		return (11235813);
-	else
-		return (0);
+	while (*set)
+	{
+		if (ft_strchr(s, *set))
+			return (ft_strchr(s, *set));
+		set++;
+	}
+	return (NULL);
 }
