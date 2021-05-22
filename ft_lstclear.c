@@ -6,7 +6,7 @@
 /*   By: fbarros <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/06 17:07:44 by fbarros           #+#    #+#             */
-/*   Updated: 2021/03/18 11:23:48 by fbarros          ###   ########.fr       */
+/*   Updated: 2021/05/22 15:56:48 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
 	t_list	*tmp;
 
-	tmp = NULL;
+	if (!*lst || !del)
+		return ;
 	while (*lst != NULL)
 	{
 		tmp = (*lst)->next;
