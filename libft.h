@@ -6,7 +6,7 @@
 /*   By: fbarros <fbarros@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 12:56:18 by fbarros           #+#    #+#             */
-/*   Updated: 2022/04/15 17:26:06 by fbarros          ###   ########.fr       */
+/*   Updated: 2022/04/16 15:13:52 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 void			*ft_memset(void *b, int c, size_t n);
 void			*ft_memcpy(void *dest, const void *src, size_t n);
@@ -73,5 +74,6 @@ int				ft_isspace(int c);
 size_t			ft_numlen(int i);
 char			*ft_strset(const char *s, char *set);
 void			*ft_realloc(void *p, size_t size);
+bool			line_empty(char *line);
 
 #endif
