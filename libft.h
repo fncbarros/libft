@@ -6,7 +6,7 @@
 /*   By: fbarros <fbarros@student.42lisboa.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/01 12:56:18 by fbarros           #+#    #+#             */
-/*   Updated: 2022/04/16 15:18:31 by fbarros          ###   ########.fr       */
+/*   Updated: 2022/04/16 15:20:37 by fbarros          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,5 @@ char			*ft_strset(const char *s, char *set);
 void			*ft_realloc(void *p, size_t size);
 bool			line_empty(char *line);
 void			ft_puttxt_fd(char **text, int fd);
-
 
 #endif
